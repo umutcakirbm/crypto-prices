@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  currencyApiBaseUri: 'https://api.coinbase.com/v2',
+  cryptoApiBaseUri: 'https://api.coingecko.com/api/v3',
 };
 
 /*

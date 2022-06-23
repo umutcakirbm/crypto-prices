@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CryptoRoutingModule } from './crypto-routing.module';
-import { ViewComponent } from './view/view.component';
+import { ViewComponent } from './components/view/view.component';
 
 
 @NgModule({
