@@ -1,0 +1,27 @@
+<div>
+  <cdk-virtual-scroll-viewport [itemSize]="pageSize" class="infinite-container">
+    <nz-list nzSize="small">
+      <nz-list-item *cdkVirtualFor="let item of dataSource">
+        <nz-skeleton
+          *ngIf="!item"
+          [nzAvatar]="true"
+          [nzParagraph]="{ rows: 1 }"
+        ></nz-skeleton>
+        <nz-list-item-meta
+          *ngIf="item"
+          [nzAvatar]="item.image"
+          [nzDescription]="item.name"
+          class="list-item-meta"
+        >
+        </nz-list-item-meta>
+        {{ item.currentPrice | currency: item.currency: 'symbol': '1.0-10' }}
+        <ul nz-list-item-actions>
+          <nz-list-item-action><a href="javascript:;" (click)="selectCoin(item)">Details</a></nz-list-item-action>
+        </ul>
+      </nz-list-item>
+    </nz-list>
+    <div *ngIf="hasError" class="has-error-text">
+        This currency is not supported by any crpyto currency.
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>

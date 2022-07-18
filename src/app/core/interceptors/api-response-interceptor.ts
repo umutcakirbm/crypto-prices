@@ -8,7 +8,7 @@ import {
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { JSONObject, JSONType, JSONValue } from '../models/json';
+import { JSONObject, JSONType } from '../models/json';
 import { camelizeResponse } from '../utils/common';
 
 @Injectable()

@@ -16,7 +16,13 @@ export class HeaderInterceptor implements HttpInterceptor {
     next: HttpHandler
   ): Observable<HttpEvent<JSONType>> {
     const newReq = req.clone({
-      headers: req.headers.set('Content-Type', 'application/json'),
+      headers: req.headers
+        .set('Content-Type', 'application/json')
+        .set(
+          'Cache-Control',
+          'no-cache, no-store, must-revalidate, post-check=0, pre-check=0'
+        )
+        .set('Expires', '0'),
     });
 
     return next.handle(newReq);

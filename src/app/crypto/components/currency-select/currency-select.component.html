@@ -1,0 +1,3 @@
+<nz-select nzShowSearch [ngModel]="currency" (ngModelChange)="changeCurrency($event)" nzPlaceHolder="Select currency">
+  <nz-option *ngFor="let currency of currencies" [nzValue]="currency" [nzLabel]="currency"></nz-option>
+</nz-select>

@@ -1,0 +1,9 @@
+.info-wrapper {
+    display: grid;
+    gap: 16px;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-around;
+    grid-template-columns: 50% 50%;
+    margin-top: 15px;
+}

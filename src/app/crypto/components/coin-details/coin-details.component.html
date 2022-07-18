@@ -1,0 +1,36 @@
+<ng-container *ngIf="coin">
+  <div>
+    <img width="150" [src]="coin.image" />
+  </div>
+  <div class="info-wrapper">
+    <nz-statistic nzTitle="Currency Name" [nzValue]="coin.name"></nz-statistic>
+    <nz-statistic
+      nzTitle="Symbol"
+      [nzValue]="(coin.symbol | uppercase) || ''"
+    ></nz-statistic>
+    <nz-statistic
+      nzTitle="Current Price"
+      [nzValue]="
+        (coin.currentPrice | currency: coin.currency:'symbol':'1.0-10') || ''
+      "
+    ></nz-statistic>
+    <nz-statistic
+      nzTitle="Highest Price (24h)"
+      [nzValue]="
+        (coin.high24h | currency: coin.currency:'symbol':'1.0-10') || ''
+      "
+    ></nz-statistic>
+    <nz-statistic
+      nzTitle="Lowest Price (24h)"
+      [nzValue]="
+        (coin.low24h | currency: coin.currency:'symbol':'1.0-10') || ''
+      "
+    ></nz-statistic>
+    <nz-statistic
+      nzTitle="Last Update"
+      [nzValue]="(coin.lastUpdated | date: 'long') || ''"
+    ></nz-statistic>
+  </div>
+</ng-container>
+
+<div *ngIf="!coin">Please select a coin to see the details.</div>

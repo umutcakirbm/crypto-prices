@@ -1,4 +1,4 @@
-import { CoinListOrderType } from "../enums/coin-list-order-type";
+import { CoinListOrderType } from '../enums/coin-list-order-type';
 
 interface CoinRoi {
   times: number;
@@ -33,15 +33,16 @@ export interface Coin {
   atlDate: string;
   roi?: CoinRoi;
   lastUpdated: string;
+  currency?: string;
 }
 
 export interface CoinListQuery {
-    currency: string;
-    order: CoinListOrderType;
-    pageSize: number;
-    pageNumber: number;
+  currency: string;
+  order: CoinListOrderType;
+  pageSize: number;
+  pageNumber: number;
 }
 
 export interface CoinListResponse {
-    data: Coin[];
+  data: Coin[];
 }

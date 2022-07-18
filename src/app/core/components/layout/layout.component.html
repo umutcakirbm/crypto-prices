@@ -1,0 +1,21 @@
+<nz-layout>
+  <nz-sider nzCollapsible nzWidth="200px">
+    <div class="logo">COINFUL</div>
+    <ul nz-menu nzTheme="dark" nzMode="inline">
+      <!-- TODO: This list should come dynamic from a list and be selected using current route -->
+      <li nz-menu-item nzSelected>
+        <i nz-icon nzType="info-circle"></i>
+        <span>Crypto Prices</span>
+      </li>
+    </ul>
+  </nz-sider>
+  <nz-layout>
+    <nz-header></nz-header>
+    <nz-content>
+      <div class="inner-content">
+        <ng-content></ng-content>
+      </div>
+    </nz-content>
+    <nz-footer>Coinful ©2022 Implement By Angular</nz-footer>
+  </nz-layout>
+</nz-layout>

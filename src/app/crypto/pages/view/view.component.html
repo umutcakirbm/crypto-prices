@@ -1,0 +1,19 @@
+<div nz-row [nzGutter]="32">
+  <div nz-col [nzSpan]="24">
+    <app-currency-select
+      [currencies]="(currencies$ | async) || []"
+      [currency]="selectedCurrency"
+      (currencyChange)="handleCurrencyChange($event)"
+    ></app-currency-select>
+  </div>
+  <div nz-col [nzSpan]="12">
+    <app-coin-list
+      [dataSource]="dataSource"
+      [hasError]="(hasError$ | async) || false"
+      (handleSelectCoin)="handleSelectCoin($event)"
+    ></app-coin-list>
+  </div>
+  <div nz-col [nzSpan]="12">
+    <app-coin-details [coin]="(selectedCoin$ | async) || undefined"></app-coin-details>
+  </div>
+</div>
